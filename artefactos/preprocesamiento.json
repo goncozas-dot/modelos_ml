@@ -1,0 +1,11 @@
+{
+  "entradas": 64,
+  "forma": [
+    8,
+    8
+  ],
+  "escala": "load_digits 0..16 dividido entre 16",
+  "tipo": "float32",
+  "dibujo": "recortar pixeles >10; conservar proporcion; ajustar dentro de 6x6; centrar sobre 8x8 negro; trazo blanco; dividir gris 0..255 entre 255",
+  "colores_invertidos": false
+}

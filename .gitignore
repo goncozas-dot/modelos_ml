@@ -1,0 +1,25 @@
+# Local user drawings and recognition history
+resultados/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# Local environments and editor settings
+.venv/
+venv/
+env/
+.vscode/
+.idea/
+
+# Legacy plots from unrelated exercises
+/curva_aprendizaje.png
+/matriz_confusion.png
+/regresion_lineal.png
+
+# Local secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key

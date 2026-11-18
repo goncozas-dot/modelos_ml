@@ -1,0 +1,140 @@
+{
+  "dataset": "sklearn.datasets.load_digits",
+  "cantidad": 1797,
+  "forma_imagen": [
+    8,
+    8
+  ],
+  "entradas": 64,
+  "clases": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "semilla": 42,
+  "proporciones": {
+    "entrenamiento": 0.5993322203672788,
+    "validacion": 0.2003338898163606,
+    "prueba": 0.2003338898163606
+  },
+  "cantidades": {
+    "entrenamiento": 1077,
+    "validacion": 360,
+    "prueba": 360
+  },
+  "dibujos_personalizados": {
+    "cantidad": 0,
+    "cantidad_por_digito": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "requisito_minimo_por_digito": 5,
+    "incluidos_solo_en_entrenamiento": true,
+    "archivo": "resultados/dibujos_entrenamiento.csv"
+  },
+  "preprocesamiento": "valores originales enteros 0..16 divididos entre 16; float32",
+  "configuraciones": {
+    "secuencial": {
+      "capas_ocultas": [
+        64,
+        32
+      ],
+      "activacion": "relu",
+      "regularizacion": "L2=0.0001 y Dropout=0.15",
+      "tasa_aprendizaje": 0.001,
+      "batch_size": 32,
+      "max_epocas": 200,
+      "early_stopping": "val_loss, paciencia=15, restaurar mejores pesos"
+    },
+    "funcional": {
+      "capas_ocultas": [
+        96,
+        48
+      ],
+      "activacion": "relu",
+      "regularizacion": "L2=0.0001 y Dropout=0.20",
+      "tasa_aprendizaje": 0.001,
+      "batch_size": 32,
+      "max_epocas": 200,
+      "early_stopping": "val_loss, paciencia=15, restaurar mejores pesos"
+    }
+  },
+  "comparacion": {
+    "secuencial": {
+      "validacion": {
+        "accuracy": 0.9861111111111112,
+        "f1_macro": 0.9862125653599116
+      },
+      "prueba": {
+        "accuracy": 0.975,
+        "f1_macro": 0.9748296445338699
+      },
+      "parametros": 6570,
+      "epocas_efectivas": 154
+    },
+    "funcional": {
+      "validacion": {
+        "accuracy": 0.9833333333333333,
+        "f1_macro": 0.9834209717031017
+      },
+      "prueba": {
+        "accuracy": 0.9694444444444444,
+        "f1_macro": 0.9693919571565722
+      },
+      "parametros": 11386,
+      "epocas_efectivas": 85
+    }
+  },
+  "modelo_elegido_por_validacion": "secuencial",
+  "prueba_persistencia": {
+    "muestras": 5,
+    "tolerancia_absoluta": 1e-06,
+    "proceso_nuevo": true,
+    "resultado": "superada"
+  },
+  "errores_analizados": 3,
+  "casos_de_error": [
+    {
+      "indice_original": 1256,
+      "real": 1,
+      "prediccion": 8,
+      "probabilidad_predicha": 0.683642566204071
+    },
+    {
+      "indice_original": 751,
+      "real": 9,
+      "prediccion": 4,
+      "probabilidad_predicha": 0.5620462894439697
+    },
+    {
+      "indice_original": 1553,
+      "real": 8,
+      "prediccion": 1,
+      "probabilidad_predicha": 0.9461039304733276
+    }
+  ],
+  "interpretacion_errores": "La figura muestra los píxeles recibidos por el modelo, la etiqueta real y la predicción. Revise las confusiones de trazos visualmente parecidos; los casos y la confianza exactos están en el CSV.",
+  "ruido": {
+    "cantidad": 30,
+    "desviacion_estandar": 0.15,
+    "semilla": 2026,
+    "accuracy_original": 1.0,
+    "accuracy_ruidosa": 1.0,
+    "archivo_detalle": "evaluacion_ruido.csv"
+  }
+}
